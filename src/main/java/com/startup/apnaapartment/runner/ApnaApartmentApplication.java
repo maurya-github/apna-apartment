@@ -1,5 +1,6 @@
 package com.startup.apnaapartment.runner;
 
+import com.startup.apnaapartment.configuration.AppConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ApnaApartmentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApnaApartmentApplication.class, args);
+		SpringApplication.run(AppConfiguration.class, args);
 	}
 
 }
