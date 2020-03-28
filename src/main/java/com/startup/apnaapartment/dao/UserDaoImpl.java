@@ -18,15 +18,14 @@ public class UserDaoImpl extends MysqlDaoHelper implements UserDao {
       .put("userid", USER_ID)
       .put("password", PASSWORD)
       .build();
+  private String INSERT_NEW_USER = StrSubstitutor
+      .replace("INSERT INTO ${tableName} (${userid}, ${password}) VALUES(?, ?)", DAO_ATTRS);
+
 
   @Autowired
   public UserDaoImpl(DataSource dataSource) {
     super(dataSource, 10);
   }
-
-
-  private String INSERT_NEW_USER = StrSubstitutor
-      .replace("INSERT INTO ${tableName} (${userid}, ${password}) VALUES(?, ?)", DAO_ATTRS);
 
   @Override
   @SneakyThrows
